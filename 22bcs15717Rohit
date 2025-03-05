@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class SumOfIntegers {
+
+    public static void main(String[] args) {
+        // Example list of integer strings
+        String[] integerStrings = {"10", "20", "30", "40", "50"};
+
+        // Parse strings into Integer objects
+        List<Integer> integerList = parseStringsToIntegers(integerStrings);
+
+        // Calculate the sum of the integers
+        int sum = calculateSum(integerList);
+
+        // Print the result
+        System.out.println("The sum of the integers is: " + sum);
+    }
+
+    /**
+     * Parses an array of strings into a list of Integer objects.
+     *
+     * @param strings the array of strings to parse
+     * @return a list of Integer objects
+     */
+    public static List<Integer> parseStringsToIntegers(String[] strings) {
+        List<Integer> integers = new ArrayList<>();
+        for (String str : strings) {
+            // Autoboxing: Convert primitive int to Integer
+            integers.add(Integer.parseInt(str));
+        }
+        return integers;
+    }
+
+    /**
+     * Calculates the sum of a list of Integer objects.
+     *
+     * @param integers the list of Integer objects
+     * @return the sum of the integers
+     */
+    public static int calculateSum(List<Integer> integers) {
+        int sum = 0;
+        for (Integer integer : integers) {
+            // Unboxing: Convert Integer to primitive int
+            sum += integer;
+        }
+        return sum;
+    }
+}
+
